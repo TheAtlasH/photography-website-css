@@ -206,7 +206,7 @@ header{
 .header-frame{
   width: 20rem;
   border: 0.5rem solid var(--color-bg-3);
-  box-shadow:0.5rem rgba(0 0 0 / 0.5); 
+  box-shadow:0 0 5rem rgba(0 0 0 / 0.5); 
   position: absolute;
   transform: rotate(-10deg);
   transform-origin: bottom left;
@@ -216,6 +216,9 @@ header{
   transform: rotate(20deg);
   top: -2rem;
   left: -2rem;
+}
+.header-frames:hover .header-frame{
+  transform: rotate(0);
 }
 .header-frames:hover .header-frame:nth-child(2){
   top: 0;
@@ -302,5 +305,62 @@ header{
   transition: var(--transition);
 }
 .gallery-image:hover img{
+  filter: saturate(1) brightness(1);
+}
+
+/*============================COLLAGE=====================*/
+
+#collage{
+  margin-top: 15rem;
+}
+.collage-head{
+  text-align: right;
+}
+.collage-head h2{
+  margin-bottom: 2rem;
+}
+.collage-head p{
+  padding-left: 50%;
+  margin-bottom: 3rem;
+}
+.collage-images{
+  display: grid;
+  grid-template-areas: 
+  "a b c"
+  "d e g"
+  "f f g"
+  "f f g";
+  gap: 2rem;
+}
+.collage-image:nth-child(1){
+  grid-area: a;
+}
+.collage-image:nth-child(2){
+  grid-area: b;
+}
+.collage-image:nth-child(3){
+  grid-area: e;
+}
+.collage-image:nth-child(4){
+  grid-area: c;
+}
+.collage-image:nth-child(5){
+  grid-area: d;
+}
+.collage-image:nth-child(6){
+  grid-area: f;
+}
+.collage-image:nth-child(7){
+  grid-area: g;
+}
+.collage-image{
+  border: 1rem solid var(--color-bg-4);
+}
+.collage-image img{
+  height: 100%;
+  filter: saturate(0) brightness(0.5);
+  transition: var(--transition);
+}
+.collage-image:hover img{
   filter: saturate(1) brightness(1);
 }
